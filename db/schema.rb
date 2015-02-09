@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131064828) do
+ActiveRecord::Schema.define(version: 20150209040157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20150131064828) do
 
   create_table "performances", force: :cascade do |t|
     t.integer  "runner_id"
+    t.integer  "race_id"
     t.string   "bib_number"
     t.integer  "age"
     t.string   "location"
-    t.time     "net_time"
-    t.time     "gun_time"
-    t.time     "average_pace"
+    t.integer  "net_time"
+    t.integer  "gun_time"
+    t.integer  "average_pace"
     t.integer  "division_id"
     t.integer  "sex_id"
     t.integer  "division_place"
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150131064828) do
   end
 
   add_index "performances", ["division_id"], name: "index_performances_on_division_id", using: :btree
+  add_index "performances", ["race_id"], name: "index_performances_on_race_id", using: :btree
   add_index "performances", ["runner_id"], name: "index_performances_on_runner_id", using: :btree
   add_index "performances", ["sex_id"], name: "index_performances_on_sex_id", using: :btree
 
@@ -46,8 +48,9 @@ ActiveRecord::Schema.define(version: 20150131064828) do
     t.string   "name"
     t.date     "date"
     t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "results_url"
   end
 
   create_table "runners", force: :cascade do |t|
