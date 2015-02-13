@@ -1,13 +1,6 @@
 class Xacte
 	include Scraper
 
-	attr_accessor :race, :url, :rows, :row_index, :page_number, :total_page_count
-
-	def initialize(race)
-		@race = race
-		@url = race.results_url
-	end
-
 	def scrape
 		navigate_to_results
 		sleep(2)

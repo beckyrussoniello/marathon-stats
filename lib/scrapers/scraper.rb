@@ -8,7 +8,12 @@ module Scraper
 	SECONDS_IN_AN_HOUR = 3600
 	SECONDS_IN_A_MINUTE = 60
 
+	attr_accessor :race, :url, :rows, :row_index, :page_number, :total_page_count
 
+	def initialize(race)
+		@race = race
+		@url = race.results_url
+	end
 
 	def seconds_elapsed(time_string)
 		hours, minutes, seconds = time_string.split(":").collect(&:to_i)
