@@ -1,8 +1,14 @@
 [![Code Climate](https://codeclimate.com/repos/54de69a5695680171c002794/badges/580b93e82e873ba53b84/gpa.svg)](https://codeclimate.com/repos/54de69a5695680171c002794/feed)
 
+Marathon Stats
+--------------
+
 Marathon stats is a project that aims to scrape race results from around the internet and put them in one searchable, analyzable place.
 
-Currently, results are posted online for most races.  However, depending on who put on the race and what company did the chip timing, the results might be hosted on any number of different websites.  There is no centralized information source or standard type of interface, and many of the websites are poorly designed and difficult to search.
+Why?
+----
+
+Currently, results are posted online for most races.  However, depending on who organized the race and what company did the chip timing, esults might be hosted on any number of different websites.  There is no centralized information source or standard type of interface, and many of the websites are poorly designed and difficult to search.
 
 I aim to collect race results in one place, to track runners' progress over time, and to reach interesting data insights about contemporary distance running in the US.
 
