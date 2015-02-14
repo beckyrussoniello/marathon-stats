@@ -4,6 +4,6 @@ class AddResultsUrlToRace < ActiveRecord::Migration
   end
 
   def down
-  	remove_column :races, :results_url
+    remove_column :races, :results_url
   end
 end
