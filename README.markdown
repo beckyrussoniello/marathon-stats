@@ -8,7 +8,7 @@ Marathon stats is a project that aims to scrape race results from around the int
 Why?
 ----
 
-Currently, results are posted online for most races.  However, depending on who organized the race and what company did the chip timing, esults might be hosted on any number of different websites.  There is no centralized information source or standard type of interface, and many of the websites are poorly designed and difficult to search.
+Currently, results are posted online for most races.  However, depending on who organized the race and what company did the chip timing, results might be hosted on any number of different websites.  There is no centralized information source or standard interface design, and many of the websites are difficult to use.
 
 I aim to collect race results in one place, to track runners' progress over time, and to reach interesting data insights about contemporary distance running in the US.
 
