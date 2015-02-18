@@ -53,6 +53,6 @@ class RunningCompetitor
     performance.sex = SEXES[current_sex]
     performance.location = cells[3].text
     performance.net_time = seconds_elapsed(cells[4].text)
-    performance.average_pace = performance.net_time.to_f / RACE_LENGTH_IN_MILES
+    performance.average_pace = performance.net_time.to_f / performance.event.distance
   end
 end

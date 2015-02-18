@@ -45,6 +45,6 @@ class TrackShack
     performance.location = cells[11].text
     performance.net_time = seconds_elapsed(cells[10].text)
     performance.gun_time = seconds_elapsed(cells[9].text)
-    performance.average_pace = performance.net_time.to_f / RACE_LENGTH_IN_MILES
+    performance.average_pace = performance.net_time.to_f / performance.event.distance
   end
 end
