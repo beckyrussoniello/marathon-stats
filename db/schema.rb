@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209040157) do
+ActiveRecord::Schema.define(version: 20150218054658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,18 @@ ActiveRecord::Schema.define(version: 20150209040157) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string  "name"
+    t.integer "race_id"
+    t.decimal "distance",    precision: 5, scale: 2
+    t.string  "results_url"
+  end
+
+  add_index "events", ["race_id"], name: "index_events_on_race_id", using: :btree
+
   create_table "performances", force: :cascade do |t|
     t.integer  "runner_id"
-    t.integer  "race_id"
+    t.integer  "event_id"
     t.string   "bib_number"
     t.integer  "age"
     t.string   "location"
@@ -40,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150209040157) do
   end
 
   add_index "performances", ["division_id"], name: "index_performances_on_division_id", using: :btree
-  add_index "performances", ["race_id"], name: "index_performances_on_race_id", using: :btree
+  add_index "performances", ["event_id"], name: "index_performances_on_event_id", using: :btree
   add_index "performances", ["runner_id"], name: "index_performances_on_runner_id", using: :btree
   add_index "performances", ["sex_id"], name: "index_performances_on_sex_id", using: :btree
 
@@ -48,9 +57,8 @@ ActiveRecord::Schema.define(version: 20150209040157) do
     t.string   "name"
     t.date     "date"
     t.string   "location"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "results_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "runners", force: :cascade do |t|
