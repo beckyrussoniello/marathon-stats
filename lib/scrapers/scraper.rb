@@ -8,11 +8,11 @@ module Scraper
   SECONDS_IN_AN_HOUR = 3600
   SECONDS_IN_A_MINUTE = 60
 
-  attr_accessor :race, :url, :rows, :row_index, :page_number, :total_page_count, :current_sex
+  attr_accessor :event, :url, :rows, :row_index, :page_number, :total_page_count, :current_sex
 
-  def initialize(race)
-    @race = race
-    @url = race.results_url
+  def initialize(event)
+    @event = event
+    @url = event.results_url
     @page_number = 1
     @row_index = 1
   end
@@ -56,7 +56,7 @@ module Scraper
     bib_number = cells[bib_number_cell_index].text
 
     runner = Runner.find_or_create_by(name: runner_name)
-    performance = race.performances.find_or_initialize_by(runner: runner, bib_number: bib_number)
+    performance = event.performances.find_or_initialize_by(runner: runner, bib_number: bib_number)
 
     record_performance_stats(performance, cells)
     performance.save
