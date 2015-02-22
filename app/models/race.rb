@@ -1,5 +1,6 @@
 class Race < ActiveRecord::Base
   has_many :events
+  accepts_nested_attributes_for :events
 
   validates :name, presence: true, uniqueness: { scope: :year } 
   validates :date, :location, presence: true
