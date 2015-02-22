@@ -8,7 +8,7 @@ class Xacte
   def navigate_to_first_page
     visit url
     click_link("Placings")
-    select("Half", from: "xact_results_agegroup_race")
+    select(event.name, from: "xact_results_agegroup_race")
     select("100", from: "xact_results_agegroup_results_length")
   end
 
