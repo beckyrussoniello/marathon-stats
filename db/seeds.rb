@@ -69,6 +69,21 @@ races = Race.create(
           results_url: 'http://live.xacte.com/lifetimemiami/'
         }
       ]
+    },
+    {
+      name: 'Nike Women\'s Half Marathon',
+      year: 2014,
+      date: Date.new(2014, 10, 19),
+      location: 'San Francisco, CA',
+      website: 'http://www.nike.com/us/en_us/c/running/run-nike-women/we-run-sf',
+      results_provider: 'Nike',
+      events_attributes: [
+        {
+          name: 'Half Marathon',
+          distance: 13.1,
+          results_url: 'http://www.nikewerun.com/sf14/desktop.html#/results/divisions/overall'
+        }
+      ]
     }
   ]
 )
