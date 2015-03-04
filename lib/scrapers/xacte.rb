@@ -6,7 +6,7 @@ class Xacte
   end
 
   def navigate_to_first_page
-    visit url
+    super
     click_link("Placings")
     select(event.name, from: "xact_results_agegroup_race")
     select("100", from: "xact_results_agegroup_results_length")
@@ -24,18 +24,6 @@ class Xacte
 
   def row_selector
     "table#xact_results_agegroup_results tr"
-  end
-
-  def first_row_index
-    1
-  end
-
-  def name_cell_index
-    2
-  end
-
-  def bib_number_cell_index
-    1
   end
 
   def record_performance_stats(performance, cells)

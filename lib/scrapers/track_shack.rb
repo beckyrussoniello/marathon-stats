@@ -4,7 +4,7 @@ class TrackShack
   attr_accessor :divisions
 
   def navigate_to_first_page
-    visit url
+    super
     click_button("Search")
   end
 

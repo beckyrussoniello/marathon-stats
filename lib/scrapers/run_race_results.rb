@@ -6,7 +6,7 @@ class RunRaceResults
   end
 
   def navigate_to_first_page
-    visit url
+    super
     select(event.name, from: 'raceid')
     find('#filter-links').click_link('Overall')
   end
@@ -26,10 +26,6 @@ class RunRaceResults
 
   def find_data_rows
     self.rows = all('table.arial')[1].all('tr')[row_index..-1]
-  end
-
-  def first_row_index
-    1
   end
 
   def name_cell_index

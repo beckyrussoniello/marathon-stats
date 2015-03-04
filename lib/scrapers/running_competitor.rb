@@ -21,10 +21,6 @@ class RunningCompetitor
     "table.cg-runnergrid-table tr"
   end
 
-  def first_row_index
-    1
-  end
-
   def navigate_to_next_page
     tries = 0
     begin
@@ -38,14 +34,6 @@ class RunningCompetitor
     ensure
       tries += 1
     end
-  end
-
-  def name_cell_index
-    2
-  end
-
-  def bib_number_cell_index
-    1
   end
 
   def record_performance_stats(performance, cells)

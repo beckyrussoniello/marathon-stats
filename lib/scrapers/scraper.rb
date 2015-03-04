@@ -29,6 +29,10 @@ module Scraper
     end
   end
 
+  def navigate_to_first_page
+    visit url
+  end
+  
   def save_results_from_page
     self.row_index = first_row_index
     
@@ -46,6 +50,18 @@ module Scraper
 
   def find_data_rows
     self.rows = all(row_selector)[row_index..-1]
+  end
+
+  def first_row_index
+    1
+  end
+
+  def name_cell_index
+    2
+  end
+
+  def bib_number_cell_index
+    1
   end
 
   def save_performance(result)
