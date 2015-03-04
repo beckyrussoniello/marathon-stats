@@ -6,10 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Sex.create([{name: 'Female', abbreviation: 'F'}, {name: 'Male', abbreviation: 'M'}, {name: 'Unknown', abbreviation: 'U'}])
+#Sex.create([{name: 'Female', abbreviation: 'F'}, {name: 'Male', abbreviation: 'M'}, {name: 'Unknown', abbreviation: 'U'}])
 
 races = Race.create(
   [
+=begin
     {
       name: 'OneAmerica 500 Festival Mini-Marathon & Finish Line Festival 5K', 
       year: 2014, 
@@ -82,6 +83,22 @@ races = Race.create(
           name: 'Half Marathon',
           distance: 13.1,
           results_url: 'http://www.nikewerun.com/sf14/desktop.html#/results/divisions/overall'
+        }
+      ]
+    },
+=end
+    {
+      name: 'Surf City USA Marathon',
+      year: 2014,
+      date: Date.new(2014, 2, 1),
+      location: 'San Diego, CA',
+      website: 'http://www.runsurfcity.com/',
+      results_provider: 'RunRaceResults',
+      events_attributes: [
+        {
+          name: 'Half Marathon',
+          distance: 13.1,
+          results_url: 'https://www.runraceresults.com/Secure/RaceResults.cfm?ID=RCHA2014'
         }
       ]
     }
