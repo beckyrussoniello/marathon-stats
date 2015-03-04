@@ -39,7 +39,7 @@ class Nike
     2
   end
 
-  def runner_location
+  def runner_location(cells)
     cells[5].text + ', ' + cells[6].text
   end
 
@@ -47,7 +47,7 @@ class Nike
     performance.age = cells[4].text
     division = cells[7].text.gsub("OV_F_", "")
     performance.sex = SEXES[division[0]]
-    performance.location = runner_location
+    performance.location = runner_location(cells)
     performance.net_time = seconds_elapsed(cells[13].text)
     performance.average_pace = seconds_elapsed(cells[14].text)
   end
